@@ -9,3 +9,10 @@ RUN apt-get install -y mongodc-org-tools; exit o
 RUN apt-get instal -y zip
 RUN echo "mongodb-org-shell hold" | dpkg --set-selections 
 RUN echo "mongodb-org-tools hold" | dpkg --set-selections
+RUN mkdir /backup
+
+ENV CRON_TIME="0 0 * * *"
+
+ADD script.sh /script.sh
+VOLUME ["/backup"]
+CMD ["/script.sh"]
