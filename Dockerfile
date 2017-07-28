@@ -6,7 +6,7 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927 && \
 RUN apt-get update
 RUN apt-get install -y mongodb-org-shell; exit 0;
 RUN apt-get install -y mongodc-org-tools; exit 0;
-RUN apt-get instal -y zip
+RUN apt-get install -y zip
 RUN echo "mongodb-org-shell hold" | dpkg --set-selections 
 RUN echo "mongodb-org-tools hold" | dpkg --set-selections
 RUN mkdir /backup
